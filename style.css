@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white;
+
+}
+
+.acardion {
+    max-width: 800px;
+}
+
+.acardion .acard {
+    position: relative;
+    margin: 10px 20px;
+
+}
+
+.acardion .acard .label {
+    position: relative;
+    padding: 10px;
+    background: rgb(48, 47, 43);
+    color: white;
+    cursor: pointer;
+}
+
+.acardion .acard .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+.acardion .acard.active .label::before{
+    content: '-';
+}
+
+.acardion .acard .content {
+    position: relative;
+    background: #fff;
+    height: 0;
+    overflow: hidden;
+    transition:0.5s ;
+    overflow-y: auto;
+
+}
+.acardion .acard.active .content{
+    height: 150px;
+    padding: 10px;
+}
